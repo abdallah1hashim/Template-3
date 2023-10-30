@@ -10,12 +10,13 @@
     --main-animation-duration: 5s;
     --background-color: #fafafa;
     --section-padding: 80px;
+    --section-background : #ececec;
 }
 html {
     scroll-behavior: smooth;
 }
 body {
-    font-family: "Cairo", sans-serif
+    font-family: "Cairo", sans-serif;
 }
 a {
     text-decoration: none;
@@ -67,6 +68,7 @@ p {
     margin: 0 auto;
     text-transform: uppercase;
     position: relative;
+    z-index: 11;
 }
 .special-heading::before{
     content: "";
@@ -78,6 +80,7 @@ p {
     left: -25%;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 10;
 }
 .special-heading::after{
     content: "";
@@ -185,11 +188,13 @@ header .sections .menu .content{
     justify-content: space-between;
     font-size: 16px;
     transition: var(--main-trasnstion);
+    display: none;
 }
 header .sections .menu:hover .content {
     top: 100%;
     opacity: 1;
     z-index: 100;
+    display: flex;
 }
 header .sections .menu .content img {
     max-width: 100%;
@@ -255,6 +260,16 @@ header .sections .menu .content ul li:last-child {
 
 /* End header */
 /* start landing */
+@media (max-width:767px) {
+    .home-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px; 
+        font-size: 30px;
+        color: var(--main-color);
+        z-index: 999;
+    }
+}
 .landing {
     height: calc(100vh - 72px);
     position: relative;
@@ -386,6 +401,259 @@ header .sections .menu .content ul li:last-child {
     justify-content: space-between;
 }
 /* End articles */
+/* Start GAllery */
+.gallery {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
+}
+.gallery .gallery-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-gap: 30px;
+    padding-top: var(--section-padding);
+}
+.gallery .gallery-content .box {
+    border: 10px solid white;
+    box-shadow: 0px 2px 15px rgba(0 0 0 / 0.5);
+    overflow: hidden ;
+    position: relative;
+}
+.gallery .gallery-content .box img {
+    max-width: 100%;
+    transition: var(--main-trasnstion);
+    position: relative;
+}
+.gallery .gallery-content .box::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%,-50%);
+    background-color: rgba(255, 255, 255, 0.11);
+    opacity: 0;
+    z-index: 1;
+}
+.gallery .gallery-content .box:hover::before {
+    animation: flashing 0.3s linear forwards;
+}
+.gallery .gallery-content .box:hover img {
+    scale: 1.1;
+}
+/* End GAllery */
+/*  Start features  */
+.features{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.features .features-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-gap: 30px;
+    padding-top: var(--section-padding);
+}
+.features .features-content .card{
+    position: relative;
+    
+}
+.features .features-content .card1{
+    color: #f44036;
+}
+.features .features-content .card2{
+    color: #009688;
+}
+.features .features-content .card3{
+    color: #01a9f4;
+}
+
+.features .features-content .card::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+.features .features-content .card1::after{
+    background-color: rgb(244 64 54 / 50%);
+}
+.features .features-content .card2::after{
+    background-color: rgb(0 150 136 / 50%);
+}
+.features .features-content .card3::after{
+    background-color: rgb(1 169 244 / 50%);
+}
+.features .features-content .card img{
+    max-width: 100%;
+    width: 100%;
+    /* height: 80%; */
+}
+.features .features-content .card div{
+    background-color: white;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-color:   transparent #66666663 #66666663 #66666663;
+}
+.features .features-content .card div::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform: skewY(10%);
+    transform: skewY(-20deg);
+    top: -40%;
+    right: 0;
+    z-index: -1;
+    transition: 0.3s;
+}
+.features .features-content .card:hover div::after{
+    transform: skewY(20deg);
+}
+.features .features-content .card div h4{
+    font-size: 35px;
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+}
+.features .features-content .card div h4::after{
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 70%;
+    bottom: -20px;
+    right: 15%;
+}
+.features .features-content .card1 div h4::after{
+    background-color: #f44036;
+}
+.features .features-content .card2 div h4::after{
+    background-color: #009688;
+}
+.features .features-content .card3 div h4::after{
+    background-color: #01a9f4;
+}
+
+.features .features-content .card div p{
+    line-height: 1.6;
+    font-size: 21px;
+    color: #666;
+    padding-bottom: 20px;
+}
+.features .features-content .card div a{
+    display: block;
+    padding: 10px 30px;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 25px;
+    font-weight: bold;
+    border-width: 3px ;
+    border-style: solid ;
+    border-radius: 7%;
+    margin-bottom: 20px;
+    position: relative;
+    color: inherit;
+}
+.features .features-content .card div a::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+.features .features-content .card1 div a::after{background-color:#f44036;}
+.features .features-content .card2 div a::after{background-color:#009688}
+.features .features-content .card3 div a::after{background-color:#01a9f4}
+
+.features .features-content .card1 div a{
+    border-color: #f44036;
+}
+.features .features-content .card2 div a{
+    border-color: #009688;
+}
+.features .features-content .card3 div a{
+    border-color: #01a9f4;
+}
+.features .features-content .card:hover div a {
+    color: white;
+}
+.features .features-content .card:hover div a::after {
+    animation: fil-in .3s linear forwards;
+}
+/*  End features  */
+/* Start testmonials */
+    .testi-sec{
+        padding-top: var(--section-padding);
+        padding-bottom: var(--section-padding);
+        background-color: var(--section-background);
+    }
+    .testi-sec .testi-content {
+        padding-top: var(--section-padding) ;
+        padding-bottom: var(--section-padding) ;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+        grid-gap: 30px;
+    }
+    .testi-sec .testi-content .com {
+        background-color: white;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 15px;
+        grid-gap: 10px;
+        border-radius: 2.5%;
+        box-shadow: 0 2px 15px rgba(255, 255, 255, 0.11);
+    }
+    .testi-sec .testi-content .com h4 {
+        margin: 0;
+        font-size: 20px;
+    }
+    .testi-sec .testi-content .com span {
+        color: #666;
+    }
+    .testi-sec .testi-content .com .filled {
+        color: gold;
+    }
+    .testi-sec .testi-content .com  p {
+        line-height: 1.6;
+        color: #666;
+        font-size: 17px;
+    }
+    .testi-sec .testi-content .com img{
+        max-width: 100%;
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+    }
+    .testi-sec .testi-content .com .img-holder{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 0;
+        right: 0;
+        transform: translate(0, -50%);
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-color: var(--section-background);
+        border-radius: 50%;
+    }
+
+/* End testmonials */
 /* Start animation */
 @keyframes smooth-move {
     0% {
@@ -440,6 +708,24 @@ header .sections .menu .content ul li:last-child {
         width: 50%;
         border-radius:0;
         height: 100%;
+    }
+}
+@keyframes fil-in {
+    0% {
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+@keyframes flashing {
+    0%, 40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        width: 200%;
+        height: 200%;
     }
 }
 /* end animation */
