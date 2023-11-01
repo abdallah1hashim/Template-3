@@ -695,15 +695,19 @@ header .sections .menu .content ul li:last-child {
     background-color: #e4e4e4;
     border-radius: 3%;
     z-index: -1;
+    transition: var(--main-trasnstion);
 }
-.team .team-content .box .data:hover:after{
-    animation: to-left 0.3s linear forwards;
+.team .team-content .box:hover .data:after{
+    width: calc(100% - 60px);
 }
 
 .team .team-content .box img {
     max-width: 100%;
     width: calc(100% - 60px);
     border-radius: 3%;
+}
+.team .team-content .box:hover img {
+    filter: grayscale(100%);
 }
 .team .team-content .box ul {
     width: 60px;
@@ -730,14 +734,12 @@ padding: 5px 0 20px 80px;
     padding:  10px 0;
     margin: 0;
 }
-
+.team .team-content .box:hover .text h5 {
+    color: #777;
+}
 /* End team */
 /* Start animation */
-@keyframes to-left {
-    100% {
-        width: calc(100% - 60px);
-    }
-}
+
 @keyframes smooth-move {
     0% {
         transform: translateY(0);
