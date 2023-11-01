@@ -574,6 +574,7 @@ header .sections .menu .content ul li:last-child {
     top: 0;
     z-index: -1;
 }
+
 .features .features-content .card1 div a::after{background-color:#f44036;}
 .features .features-content .card2 div a::after{background-color:#009688}
 .features .features-content .card3 div a::after{background-color:#01a9f4}
@@ -684,6 +685,21 @@ header .sections .menu .content ul li:last-child {
     border-radius: 3%;
     z-index: -2;
 }
+.team .team-content .box .data::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0;
+    top: 0;
+    right: 0;
+    background-color: #e4e4e4;
+    border-radius: 3%;
+    z-index: -1;
+}
+.team .team-content .box .data:hover:after{
+    animation: to-left 0.3s linear forwards;
+}
+
 .team .team-content .box img {
     max-width: 100%;
     width: calc(100% - 60px);
@@ -708,8 +724,20 @@ header .sections .menu .content ul li:last-child {
 .team .team-content .box .text {
 padding: 5px 0 20px 80px;
 }
+.team .team-content .box .text h5 {
+    font-size: 20px;
+    color: var(--main-color);
+    padding:  10px 0;
+    margin: 0;
+}
+
 /* End team */
 /* Start animation */
+@keyframes to-left {
+    100% {
+        width: calc(100% - 60px);
+    }
+}
 @keyframes smooth-move {
     0% {
         transform: translateY(0);
