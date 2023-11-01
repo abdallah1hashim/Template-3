@@ -260,8 +260,12 @@ header .sections .menu .content ul li:last-child {
 
 /* End header */
 /* start landing */
+.home-button {
+    font-size: 0;
+}
 @media (max-width:767px) {
     .home-button {
+        display: block;
         position: fixed;
         bottom: 20px;
         right: 20px; 
@@ -738,6 +742,66 @@ padding: 5px 0 20px 80px;
     color: #777;
 }
 /* End team */
+/* Start services */
+    .services{
+        padding-top: var(--section-padding);
+        padding-bottom: var(--section-padding);
+        background-color: var(--section-background);
+    }
+    .services .services-content{
+        padding-top: var(--section-padding);
+        padding-bottom: var(--section-padding);
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+        gap: 30px;
+    }
+    .services .services-content .serv {
+        background-color: white;
+    }
+    .services .services-content .serv .icon {
+        margin: 0 auto;
+        width: fit-content;
+        padding: 20px 0;
+        text-align: center;
+    }
+    .services .services-content .serv .icon h4{
+        color: var(--main-color);
+    }
+    .services .services-content .serv .icon i{
+        color: #ececec;
+        font-size: 60px;
+    }
+    .services .services-content .serv .info {
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .services .services-content .serv .info h4 {
+        margin: 0;
+        padding: 10px;
+        font-size: 30px;
+        background-color: var(--main-color);
+        color: white;
+        position: relative;
+    }
+    .services .services-content .serv .info h4::before{
+        content: "";
+        position: absolute;
+        border-color: var(--main-color) transparent transparent var(--main-color);
+        border-width: 28px 26px ;
+        border-style: solid;
+        top: 0;
+        right: -80%;
+    }
+    .services .services-content .serv .info p {
+        padding: 10px;
+        font-size: 15px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        color: var(--main-color);
+    }
+/* End services */
 /* Start animation */
 
 @keyframes smooth-move {
