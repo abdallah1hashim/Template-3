@@ -176,11 +176,10 @@ header  .sections > li a:hover::before {
 header .sections .menu .content{
     position: absolute;
     top:  calc(100% + 50px) ;
-    z-index: -1;
+    z-index: -999;
     opacity: 0;
     left: 0;
     background-color: white;
-    z-index: 100;
     width: 100%;
     display: flex;
     border-bottom: 3px solid var(--main-color);
@@ -188,7 +187,7 @@ header .sections .menu .content{
     justify-content: space-between;
     font-size: 16px;
     transition: var(--main-trasnstion);
-    display: none;
+    
 }
 header .sections .menu:hover .content {
     top: 100%;
@@ -757,15 +756,24 @@ padding: 5px 0 20px 80px;
     }
     .services .services-content .serv {
         background-color: white;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+    }
+    .services .services-content .serv:hover {
+        border-top: 3px solid var(--main-color);
+        margin-top: -3px;
+        transform: translateY(-10px);
+        transition: var(--main-trasnstion);
     }
     .services .services-content .serv .icon {
         margin: 0 auto;
         width: fit-content;
-        padding: 20px 0;
+        padding: 40px 0 20px;
         text-align: center;
+
     }
     .services .services-content .serv .icon h4{
         color: var(--main-color);
+        font-size: 25px;
     }
     .services .services-content .serv .icon i{
         color: #ececec;
@@ -787,11 +795,21 @@ padding: 5px 0 20px 80px;
     .services .services-content .serv .info h4::before{
         content: "";
         position: absolute;
-        border-color: var(--main-color) transparent transparent var(--main-color);
-        border-width: 28px 26px ;
         border-style: solid;
         top: 0;
-        right: -80%;
+        right: -94%;
+        border-width: 30px 25px 25px 25px;
+        border-color: var(--main-color) transparent transparent var(--main-color);
+    }
+    .services .services-content .serv .info h4::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 50px;
+        height: 100%;
+        right: -137%;
+        background-color: #d5d5d5;
+        transform: skewX(-42deg);
     }
     .services .services-content .serv .info p {
         padding: 10px;
@@ -802,6 +820,441 @@ padding: 5px 0 20px 80px;
         color: var(--main-color);
     }
 /* End services */
+/* Start Our Skills */
+.skills{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.skills .skills-content {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    display: flex;
+}
+
+.skills .skills-content img {
+    max-width: 100%;
+    width: 50%;
+}
+@media (max-width: 991px) {
+    .skills .skills-content img {
+        display: none;
+    }
+}
+.skills .skills-content .prog-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.skills .skills-content .prog-container .prog h4{
+    font-size: 20px;
+}
+.skills .skills-content .prog-container .prog .prog-con{
+    width: 100%;
+    height: 30px;
+    background-color: #eee ;
+    position: relative;
+}
+.skills .skills-content .prog-container .prog .bar{
+    background-color: var(--main-color);
+    height: 30px;
+    position: relative;
+    display: block;
+}
+.skills .skills-content .prog-container .prog .prog-con::before{
+    content: attr(data-progress);
+    position: absolute;
+    top: -35px;
+    right: 0;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 3px;
+    border-radius: 15%;
+    font-size: 12px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+/* End Our Skills */
+/* Start how it works */
+.work {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
+}
+.work .work-content {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    display: flex;
+    gap: 10%;
+}
+.work .work-content .work-img{
+    max-width: 100%;
+    width: 40%;
+    margin: auto;
+}
+@media (max-width:991px) {
+    .work .work-content {
+        flex-direction: column;
+
+    }
+    .work .work-content .work-img{
+        width: 70%;
+        margin-bottom: 40px;
+    }
+}
+.work .work-content .info{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+@media (max-width:991px) {
+    .work .work-content .info{
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+.work .work-content .info .box{
+    display: flex;
+    gap: 40px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f6f5f5;
+    border: 3px solid white;
+    border-radius: 3%;
+    position: relative;
+    z-index: 1;
+}
+.work .work-content .info .box::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    background-color: #ededed;
+    transition: var(--main-trasnstion);
+    z-index: -1;
+}
+.work .work-content .info .box:hover::after{
+    width: 100%;
+    height: 100%;
+}
+
+.work .work-content .info .box img{
+    max-width: 100%;
+    width: 13%;
+    margin: auto auto;
+}
+.work .work-content .info .box .text h4{
+    font-size: 20px;
+    margin: 10px 0;
+}
+.work .work-content .info .box .text p{
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+}
+/* End how it works */
+/* Start Events */
+.events {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.events .events-content {
+    padding-top: var(--section-padding);
+    display: flex;
+}
+.events .events-content img {
+    max-width: 100%;
+    width: 40%;
+}
+@media (max-width:991px) {
+    .events .events-content img {
+        display: NONE;
+    }
+}
+.events .events-content .info {
+    padding: 30px;
+    text-align: center;
+}
+.events .events-content .info ul {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+}
+.events .events-content .info ul li {
+    padding: 8px 9px;
+    width: 70px;
+    border-radius: 5%;
+    border: 1px solid #d4d4d4;
+    transition: var(--main-trasnstion);
+}
+.events .events-content .info ul li:hover {
+    border: 1px solid var(--main-color);
+}
+.events .events-content .info ul li span {
+    padding: 20px 0 10px;
+    display: inline-block;
+    color: var(--main-color);
+    font-size: 35px;
+    font-weight: 600;
+}
+.events .events-content .info ul li p {
+    border-top: 1px solid #d4d4d4;
+    font-size: 13px;
+    width: 100%;
+    padding-top: 10px ;
+}
+.events .events-content .info h4 {
+    font-size: 35px;
+}
+.events .events-content .info p {
+    font-size: 17px;
+}
+.events .mail-box  {
+    margin: 20px auto 0;
+    width: fit-content;
+    padding: 30px;
+    background-color: var(--section-background);
+    border-radius: 50px;
+    display: flex;
+    gap: 20px;
+    width: 600px;
+}
+.events .mail-box input[type="email"]  {
+    padding: 20px;
+    flex: 1;
+    border-radius: 50px;
+    outline: 0;
+    border: 0;
+}
+.events .mail-box input[type="email"]:focus  {
+    outline: 0;
+}
+.events .mail-box input[type="email"]::placeholder  {
+    transition: var(--main-trasnstion);
+}
+.events .mail-box input[type="email"]:focus::placeholder  {
+    opacity: 0;
+}
+.events .mail-box input[type="submit"]  {
+    background-color: var(--main-color);
+    font-weight: bold;
+    color: white;
+    border-radius: 50px;
+    border: 0;
+    padding: 20px;
+}
+@media (max-width:767px) {
+    .events .mail-box  {
+        width: fit-content;
+        flex-direction: column;
+        border-radius: 0;
+    }
+    .events .mail-box input[type="email"]  {
+        width: 300PX;
+    }
+}
+/* End Events */
+/* Start pricing */
+.pricing {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
+}
+.pricing .pricing-content {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+}
+.pricing .pricing-content .col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+.pricing .pricing-content .col::before{
+    content: "";
+    position: absolute;
+    background-color: rgb(102 102 102 / 10%);
+    height: 50%;
+    width: 0;
+    top: 0;
+    left: 0;
+    transition: var(--main-trasnstion);
+}
+.pricing .pricing-content .col::after{
+    content: "";
+    position: absolute;
+    background-color: rgb(102 102 102 / 10%);
+    height: 50%;
+    width: 0;
+    bottom: 0;
+    right: 0;
+    transition: var(--main-trasnstion);
+}
+.pricing .pricing-content .col:hover::before,
+.pricing .pricing-content .col:hover::after{
+    width: 100%;
+}
+.pricing .pricing-content .most-populer{
+    top: -15px;
+}
+.pricing .pricing-content .col .title{
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 25px;
+}
+.pricing .pricing-content .col .img-holder{
+    height: 190px;
+    display: flex;
+    justify-content: center;
+
+}
+.pricing .pricing-content .col img{
+    max-width: 100%;
+    width: 60%;
+    margin: 0 auto;
+}
+.pricing .pricing-content .col:last-child img{
+    width:40%;
+}
+.pricing .pricing-content .col .price{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.pricing .pricing-content .col .price .amount{
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 45px;
+}
+.pricing .pricing-content .col .price .time{
+    color: #666;
+}
+.pricing .pricing-content .col ul{
+    padding: 20px 0;
+}
+.pricing .pricing-content .col ul li{
+    border-top: 1px solid #eee ;
+    padding: 20px;
+}
+.pricing .pricing-content .col ul li::before{
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    padding: 0 5px;
+    color: var(--main-color);
+}
+.pricing .pricing-content .col .price-butt {
+    width: fit-content;
+    margin: 20px auto;
+    padding: 20px;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    font-weight: bold;
+    transition: var(--main-trasnstion);
+}
+.pricing .pricing-content .col .price-butt:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+.pricing .pricing-content .col .label{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 10px 50px;
+    writing-mode: vertical-lr ;
+    font-size: 20px;
+    font-weight: bold;
+}
+.pricing .pricing-content .col .label::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 25px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
+
+/* End pricing */
+/* Start vids */
+.vids-sec {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.vids{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.vids-sec .vids .info{
+    min-width: 300px;
+}
+.vids-sec .vids .info .text{
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.vids-sec .vids .info .text p{
+    font-weight: bold;
+}
+.vids-sec .vids .info ul{
+    display: flex;
+    flex-direction: column;
+}
+.vids-sec .vids .info ul li{
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    transition: var(--main-trasnstion);
+}
+.vids-sec .vids .info ul li:hover{
+    background-color: #f6f6f6;
+    color: var(--main-color);
+}
+.vids-sec .vids .info ul li p{}
+.vids-sec .vids .info ul li span{
+    color: rgba(128, 128, 128, 0.664);
+    padding: 10px 0;
+    display: block;
+}
+.vids-sec .vids .vid-comp{
+    width: 60%;
+    flex-grow: 1;
+    background-color: var(--section-background);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.vids-sec .vids .vid-comp .img-holder{
+    margin: 20px;
+}
+.vids-sec .vids .vid-comp img{
+    max-width: 100%;
+
+}
+.vids-sec .vids .vid-comp p{
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* End vids */
 /* Start animation */
 
 @keyframes smooth-move {
