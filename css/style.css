@@ -1255,6 +1255,21 @@ padding: 5px 0 20px 80px;
 }
 
 /* End vids */
+/* start stats */
+.stats {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.stats h3 {
+    width: fit-content;
+    margin: 0 auto;
+}
+.stats h3 {}
+.stats .box{}
+.stats .box i{}
+.stats .box span{}
+.stats .box p{}
+/* End stats */
 /* Start animation */
 
 @keyframes smooth-move {
