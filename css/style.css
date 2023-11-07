@@ -1288,7 +1288,7 @@ padding: 5px 0 20px 80px;
     top:0;
     left:0;
     width: 5px;
-    height:0%;
+    height:0;
     transition: var(--main-trasnstion);
 }
 .stats .box:hover::before{
@@ -1300,7 +1300,7 @@ padding: 5px 0 20px 80px;
     bottom:0;
     right:0;
     width: 5px;
-    height:0%;
+    height:0;
     transition: var(--main-trasnstion);
 }
 .stats .box:hover::after{
