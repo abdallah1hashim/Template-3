@@ -1308,15 +1308,18 @@ padding: 5px 0 20px 80px;
 .stats .box:hover::after{
     height:100%;
 }
-.stats .box i{}
+.stats .box i{
+    font-size:2em;
+}
 .stats .box span{
     font-weight: bold;
-    font-size: 28px;
+    font-size: 50px;
 }
 .stats .box p{
     color: var(--main-color);
     font-style: italic;
     font-weight: bold;
+    font-size: 20px;
 }
 
 /* End stats */
