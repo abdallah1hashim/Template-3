@@ -1290,6 +1290,7 @@ padding: 5px 0 20px 80px;
     width: 5px;
     height:0;
     transition: var(--main-trasnstion);
+    background-color: var(--main-color);
 }
 .stats .box:hover::before{
     height:100%;
@@ -1302,6 +1303,7 @@ padding: 5px 0 20px 80px;
     width: 5px;
     height:0;
     transition: var(--main-trasnstion);
+    background-color: var(--main-color);
 }
 .stats .box:hover::after{
     height:100%;
