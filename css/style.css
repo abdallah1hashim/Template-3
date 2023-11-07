@@ -1268,12 +1268,53 @@ padding: 5px 0 20px 80px;
     margin-bottom: 39px;
 }
 .stats .container {
-    
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    grid-gap: 20px;
 }
-.stats .box{}
+.stats .box{
+  background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    gap: 5px;
+    posetion: relative;
+}
+.stats .box::before{
+    posetion: absolute;
+    top:0;
+    left:0;
+    width: 5px;
+    height:0%;
+    transtion: var(--main-trasnstion);
+}
+.stats .box:hover::before{
+    hieght:100%;
+}
+.stats .box::after{
+    posetion: absolute;
+    bottom:0;
+    right:0;
+    width: 5px;
+    height:0%;
+    transtion: var(--main-trasnstion);
+}
+.stats .box:hover::after{
+    hieght:100%;
+}
 .stats .box i{}
-.stats .box span{}
-.stats .box p{}
+.stats .box span{
+    font-weight: bold;
+    font-size: 28px;
+}
+.stats .box p{
+    color: var(--main-color);
+    font-style: italic;
+    font-weight: bold;
+}
+
 /* End stats */
 /* Start animation */
 
