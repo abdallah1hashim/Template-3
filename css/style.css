@@ -1292,7 +1292,7 @@ padding: 5px 0 20px 80px;
     transition: var(--main-trasnstion);
 }
 .stats .box:hover::before{
-    hieght:100%;
+    height:100%;
 }
 .stats .box::after{
     content: "";
@@ -1304,7 +1304,7 @@ padding: 5px 0 20px 80px;
     transition: var(--main-trasnstion);
 }
 .stats .box:hover::after{
-    hieght:100%;
+    height:100%;
 }
 .stats .box i{}
 .stats .box span{
