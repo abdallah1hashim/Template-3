@@ -1682,7 +1682,12 @@ header .sections .menu .content ul li:last-child {
 }
 
 @media (max-width: 768px) {
-  .disc-sec .have-disc {
+  .disc-sec {
+    flex-direction: column;
+  }
+}
+
+/* .disc-sec .have-disc {
     flex-basis: 100%;
     ;
   }
@@ -1691,7 +1696,7 @@ header .sections .menu .content ul li:last-child {
     flex-basis: 100%;
     ;
   }
-}
+} */
 
 /* End discount */
 /* Start footer */
