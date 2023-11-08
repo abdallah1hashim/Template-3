@@ -1577,6 +1577,7 @@ header .sections .menu .content ul li:last-child {
 .disc-sec {
   display: flex;
   height: 100vh;
+  flex-wrap: wrap;
 }
 
 .disc-sec .have-disc {
@@ -1680,6 +1681,18 @@ header .sections .menu .content ul li:last-child {
   border: none;
 }
 
+@media (max-width: 768px) {
+  .disc-sec .have-disc {
+    flex-basis: 100%;
+    ;
+  }
+
+  .disc-sec .req-disc {
+    flex-basis: 100%;
+    ;
+  }
+}
+
 /* End discount */
 /* Start footer */
 footer {
@@ -1777,10 +1790,9 @@ footer .container .reach .text {
   gap: 10px;
 }
 
-footer .container .reach .text i {}
-
-footer .container .reach .text span {
-  margin-top: 0;
+footer .container .reach .text i {
+  padding-top: 5px;
+  display: block;
 }
 
 footer .container .pics {
