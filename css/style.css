@@ -1741,14 +1741,47 @@ footer .container .links {}
 footer .container .links ul {
   display: flex;
   flex-direction: column;
-
 }
 
 footer .container .links ul li {
+  display: block;
+  padding: 10px 10px 10px 0;
   border-bottom: 1px solid #f9f9f9;
 }
 
-footer .container .reach {}
+footer .container .links ul li a {
+  transition: var(--main-trasnstion);
+}
+
+footer .container .links ul li a::before {
+  content: "\f101";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: var(--main-color);
+  padding-right: 10px;
+}
+
+footer .container .links ul li:hover a {
+  transform: translateX(15px);
+  display: block;
+}
+
+footer .container .reach {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+footer .container .reach .text {
+  display: flex;
+  gap: 10px;
+}
+
+footer .container .reach .text i {}
+
+footer .container .reach .text span {
+  margin-top: 0;
+}
 
 footer .container .pics {
   display: flex;
