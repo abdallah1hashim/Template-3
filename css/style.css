@@ -1578,12 +1578,13 @@ header .sections .menu .content ul li:last-child {
   display: flex;
   height: 100vh;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .disc-sec .have-disc {
   background-color: var(--main-color);
   background-image: url(/assets/pics/3a805dc3-fdf1-45dd-9781-242e4da60b5e.jpeg);
-  flex-basis: 50% ;
+  flex-basis: 50%;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -1593,7 +1594,7 @@ header .sections .menu .content ul li:last-child {
   align-items: center;
   position: relative;
   z-index: -2;
-  
+
 }
 
 .disc-sec .have-disc::after {
@@ -1686,18 +1687,19 @@ header .sections .menu .content ul li:last-child {
   .disc-sec {
     flex-direction: column;
   }
-}
 
-/* .disc-sec .have-disc {
+  .disc-sec .have-disc {
     flex-basis: 100%;
-    ;
   }
 
   .disc-sec .req-disc {
     flex-basis: 100%;
-    ;
   }
-} */
+}
+
+}
+
+*/
 
 /* End discount */
 /* Start footer */
