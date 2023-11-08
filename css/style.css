@@ -1576,8 +1576,8 @@ header .sections .menu .content ul li:last-child {
 /* Start discount */
 .disc-sec {
   display: flex;
-  height: 100vh;
-  flex-wrap: wrap;
+  height: fit-content;
+  flex-wrap: nowrap;
   flex-direction: row;
 }
 
@@ -1683,9 +1683,11 @@ header .sections .menu .content ul li:last-child {
   border: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .disc-sec {
     flex-direction: column;
+    height: fit-content;
+    flex-wrap: nowrap;
   }
 
   .disc-sec .have-disc {
@@ -1696,10 +1698,6 @@ header .sections .menu .content ul li:last-child {
     flex-basis: 100%;
   }
 }
-
-}
-
-*/
 
 /* End discount */
 /* Start footer */
