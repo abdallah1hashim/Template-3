@@ -1578,6 +1578,7 @@ header .sections .menu .content ul li:last-child {
   display: flex;
   height: 100vh;
   flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .disc-sec .have-disc {
